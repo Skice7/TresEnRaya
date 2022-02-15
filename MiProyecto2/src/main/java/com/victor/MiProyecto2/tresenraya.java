@@ -2,7 +2,7 @@ package com.victor.MiProyecto2;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -25,8 +25,10 @@ import javax.swing.ImageIcon;
 public class tresenraya extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtAsda;
 	private JTextField textField;
+	private JTextField textField_1;
+	private ButtonGroup bg = new ButtonGroup();
+	private ButtonGroup bg2 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -48,63 +50,33 @@ public class tresenraya extends JFrame {
 	 * Create the frame.
 	 */
 	public tresenraya() {
+		setTitle("Tres En Raya");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 687, 467);
+		setBounds(100, 100, 903, 539);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(245, 261, -83, -52);
-		contentPane.add(layeredPane);
-		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
 		panel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel.setBounds(324, 11, 319, 406);
+		panel.setBounds(440, 11, 437, 478);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Nueva Partida");
-		btnNewButton.setBounds(111, 21, 101, 23);
+		btnNewButton.setBounds(135, 22, 159, 40);
 		panel.add(btnNewButton);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_1.setBounds(20, 113, 278, 124);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Jugador 1");
-		lblNewLabel.setBounds(10, 11, 63, 23);
-		panel_1.add(lblNewLabel);
-		
-		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setBounds(10, 45, 63, 23);
-		panel_1.add(lblNombre);
-		
-		txtAsda = new JTextField();
-		txtAsda.setBounds(58, 46, 86, 20);
-		panel_1.add(txtAsda);
-		txtAsda.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("Tipo:");
-		lblNewLabel_1.setBounds(10, 79, 46, 14);
-		panel_1.add(lblNewLabel_1);
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Humano");
-		rdbtnNewRadioButton.setBounds(52, 75, 65, 23);
-		panel_1.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnCpu = new JRadioButton("Cpu");
-		rdbtnCpu.setBounds(119, 75, 79, 23);
-		panel_1.add(rdbtnCpu);
+		JLabel lblNewLabel_2 = new JLabel("Aquí ponemos de quien es el turno");
+		lblNewLabel_2.setBounds(33, 73, 248, 14);
+		panel.add(lblNewLabel_2);
 		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);
 		panel_1_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_1_1.setBounds(20, 248, 278, 124);
+		panel_1_1.setBounds(20, 290, 383, 166);
 		panel.add(panel_1_1);
 		
 		JLabel lblJugador = new JLabel("Jugador 2");
@@ -117,95 +89,204 @@ public class tresenraya extends JFrame {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(58, 46, 86, 20);
+		textField.setBounds(68, 45, 105, 20);
 		panel_1_1.add(textField);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Tipo:");
 		lblNewLabel_1_1.setBounds(10, 79, 46, 14);
 		panel_1_1.add(lblNewLabel_1_1);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Humano");
-		rdbtnNewRadioButton_1.setBounds(52, 75, 65, 23);
-		panel_1_1.add(rdbtnNewRadioButton_1);
+		JRadioButton humano2 = new JRadioButton("Humano");
+		humano2.setBounds(68, 75, 86, 23);
+		panel_1_1.add(humano2);
 		
-		JRadioButton rdbtnCpu_1 = new JRadioButton("Cpu");
-		rdbtnCpu_1.setBounds(119, 75, 79, 23);
-		panel_1_1.add(rdbtnCpu_1);
+		JRadioButton cpu2 = new JRadioButton("Cpu");
+		cpu2.setBounds(156, 75, 86, 23);
+		panel_1_1.add(cpu2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Aquí ponemos de quien es el turno");
-		lblNewLabel_2.setBounds(31, 73, 248, 14);
-		panel.add(lblNewLabel_2);
+		bg2.add(humano2);
+		bg2.add(cpu2);
+		
+		JPanel panel_1_1_1 = new JPanel();
+		panel_1_1_1.setLayout(null);
+		panel_1_1_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel_1_1_1.setBounds(20, 111, 383, 166);
+		panel.add(panel_1_1_1);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("Jugador 1");
+		lblNewLabel_3_1.setBounds(10, 11, 63, 23);
+		panel_1_1_1.add(lblNewLabel_3_1);
+		
+		JLabel lblNombre_1_1 = new JLabel("Nombre:");
+		lblNombre_1_1.setBounds(10, 45, 63, 23);
+		panel_1_1_1.add(lblNombre_1_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(68, 45, 105, 20);
+		panel_1_1_1.add(textField_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Tipo:");
+		lblNewLabel_1_1_1.setBounds(10, 79, 46, 14);
+		panel_1_1_1.add(lblNewLabel_1_1_1);
+		
+		JRadioButton humano1 = new JRadioButton("Humano");
+		humano1.setBounds(68, 75, 86, 23);
+		panel_1_1_1.add(humano1);
+		
+		JRadioButton cpu1 = new JRadioButton("Cpu");
+		cpu1.setBounds(156, 75, 86, 23);
+		panel_1_1_1.add(cpu1);
+		
+		bg.add(humano1);
+		bg.add(cpu1);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.setBackground(Color.LIGHT_GRAY);
-		panel_2.setBounds(10, 11, 304, 406);
+		panel_2.setBounds(10, 11, 416, 478);
 		contentPane.add(panel_2);
 		panel_2.setLayout(new GridLayout(3, 3, 0, 0));
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_4);
-		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
+		panel_4.setLayout(null);
 		
-		JLabel lblNewLabel_4_8 = new JLabel("New label");
-		panel_4.add(lblNewLabel_4_8);
+		/*JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(20, 11, 117, 136);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_4.add(lblNewLabel);
+		*/
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		lblNewLabel_1.setBounds(20, 11, 117, 136);
+		panel_4.add(lblNewLabel_1);
 		
 		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_5);
-		panel_5.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4 = new JLabel("New label");
+		panel_5.setLayout(null);
+		/*
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		lblNewLabel_4.setBounds(20, 11, 117, 136);
 		panel_5.add(lblNewLabel_4);
+		*/
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		lblNewLabel_3.setBounds(20, 11, 117, 136);
+		panel_5.add(lblNewLabel_3);
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_3);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
-		panel_3.add(lblNewLabel_4_1);
+		panel_3.setLayout(null);
+		/*
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		lblNewLabel_6.setBounds(20, 11, 117, 136);
+		panel_3.add(lblNewLabel_6);
+		*/
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		lblNewLabel_5.setBounds(20, 11, 117, 136);
+		panel_3.add(lblNewLabel_5);
 		
 		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_6.setToolTipText("");
 		panel_2.add(panel_6);
-		panel_6.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
+		panel_6.setLayout(null);
+		/*
+		JLabel lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setBounds(20, 11, 117, 136);
+		lblNewLabel_9.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_6.add(lblNewLabel_9);
+		*/
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setBounds(20, 11, 117, 136);
+		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_6.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_4_2 = new JLabel("New label");
-		panel_6.add(lblNewLabel_4_2);
+		JLabel lblNewLabel_8 = new JLabel("New label");
+		lblNewLabel_8.setBounds(20, 11, 117, 136);
+		panel_6.add(lblNewLabel_8);
 		
 		JPanel panel_7 = new JPanel();
+		panel_7.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_7);
-		panel_7.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_4 = new JLabel("New label");
-		panel_7.add(lblNewLabel_4_4);
+		panel_7.setLayout(null);
+		/*	
+		JLabel lblNewLabel_11 = new JLabel("\r\n");
+		lblNewLabel_11.setBounds(20, 11, 117, 136);
+		lblNewLabel_11.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_7.add(lblNewLabel_11);
+		*/
+		JLabel lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.setBounds(20, 11, 117, 136);
+		lblNewLabel_10.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_7.add(lblNewLabel_10);
 		
 		JPanel panel_8 = new JPanel();
+		panel_8.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_8);
-		panel_8.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_3 = new JLabel("New label");
-		panel_8.add(lblNewLabel_4_3);
+		panel_8.setLayout(null);
+		/*
+		JLabel lblNewLabel_13 = new JLabel("");
+		lblNewLabel_13.setBounds(20, 11, 117, 136);
+		lblNewLabel_13.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_8.add(lblNewLabel_13);
+		*/
+		JLabel lblNewLabel_12 = new JLabel("\r\n");
+		lblNewLabel_12.setBounds(20, 11, 117, 136);
+		lblNewLabel_12.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_8.add(lblNewLabel_12);
 		
 		JPanel panel_9 = new JPanel();
+		panel_9.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_9);
-		panel_9.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_5 = new JLabel("New label");
-		panel_9.add(lblNewLabel_4_5);
+		panel_9.setLayout(null);
+		/*
+		JLabel lblNewLabel_15 = new JLabel("");
+		lblNewLabel_15.setBounds(20, 11, 117, 136);
+		lblNewLabel_15.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_9.add(lblNewLabel_15);
+		*/
+		JLabel lblNewLabel_14 = new JLabel("");
+		lblNewLabel_14.setBounds(20, 11, 117, 136);
+		lblNewLabel_14.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_9.add(lblNewLabel_14);
 		
 		JPanel panel_10 = new JPanel();
+		panel_10.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_10);
-		panel_10.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_6 = new JLabel("New label");
-		panel_10.add(lblNewLabel_4_6);
+		panel_10.setLayout(null);
+		/*
+		JLabel lblNewLabel_17 = new JLabel("");
+		lblNewLabel_17.setBounds(20, 11, 117, 136);
+		lblNewLabel_17.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_10.add(lblNewLabel_17);
+		*/
+		JLabel lblNewLabel_16 = new JLabel("");
+		lblNewLabel_16.setBounds(20, 11, 117, 136);
+		lblNewLabel_16.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_10.add(lblNewLabel_16);
 		
 		JPanel panel_11 = new JPanel();
+		panel_11.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_2.add(panel_11);
-		panel_11.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 55));
-		
-		JLabel lblNewLabel_4_7 = new JLabel("New label");
-		panel_11.add(lblNewLabel_4_7);
+		panel_11.setLayout(null);
+		/*
+		JLabel lblNewLabel_19 = new JLabel("");
+		lblNewLabel_19.setBounds(20, 11, 117, 136);
+		lblNewLabel_19.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\Xedit.png"));
+		panel_11.add(lblNewLabel_19);
+		*/
+		JLabel lblNewLabel_18 = new JLabel("");
+		lblNewLabel_18.setBounds(20, 11, 117, 136);
+		lblNewLabel_18.setIcon(new ImageIcon("C:\\Users\\victo\\Desktop\\JAVA BOOTCAMP\\juegotresenraya\\imagenestresenraya\\circuloedit.png"));
+		panel_11.add(lblNewLabel_18);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
